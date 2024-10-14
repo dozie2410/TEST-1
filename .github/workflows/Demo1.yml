@@ -1,8 +1,25 @@
-name: hello-world
-on: push
+name: CI/CD Pipeline for dozie
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
 jobs:
-  my-job:
+  build:
     runs-on: ubuntu-latest
+    
     steps:
-      - name: my-step
+      - name: check-out code
+        uses: actions/checkout@v2
+
+      - name: setup dotnet core
+        uses:  actions/setup-dotnet@v1
+        with: 
+           dotnet-version: '8.0.x'
+
+      - name: build project  
         run: dotnet build
+
+      - name: run dotnet project
+        run: dotnet run
+ 
