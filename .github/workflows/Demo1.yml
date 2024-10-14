@@ -20,6 +20,6 @@ jobs:
       - name: build project  
         run: dotnet build
 
-      - name: run dotnet project
-        run: dotnet run
+      #- name: run dotnet project
+       # run: dotnet run
  
