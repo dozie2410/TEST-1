@@ -1,9 +1,11 @@
 name: CI/CD Pipeline for dozie
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - master
+    
+    
+  #push:
+   
+      
 jobs:
   build:
     runs-on: ubuntu-latest
